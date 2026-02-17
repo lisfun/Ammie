@@ -1,0 +1,21 @@
+{
+  "version": "1.0.0",
+  "capabilities": [
+    {
+      "name": "play_music",
+      "intent": "PLAY_MUSIC",
+      "description": "播放音乐",
+      "input_schema": { "song": { "type": "string", "optional": true } },
+      "output_schema": { "status": { "type": "string" } },
+      "executor": "mock_music_player"
+    },
+    {
+      "name": "get_time",
+      "intent": "QUERY_TIME",
+      "description": "获取当前时间",
+      "input_schema": {},
+      "output_schema": { "time": { "type": "string" } },
+      "executor": "system_time"
+    }
+  ]
+}

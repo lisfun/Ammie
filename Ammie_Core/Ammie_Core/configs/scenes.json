@@ -1,0 +1,17 @@
+{
+  "version": "1.0.0",
+  "scene_model": {
+    "WHO": { "types": ["self", "user", "third_party"], "default": "user" },
+    "WHAT": { "types": ["WORK", "ENTERTAINMENT", "TOOL"], "required": true },
+    "WHEN": { "types": ["now", "relative", "absolute"], "default": "now", "expiry": "30s" },
+    "WHERE": { "types": ["home", "office", "virtual"], "default": "virtual" }
+  },
+  "rules": [
+    {
+      "id": "rule_001",
+      "conditions": { "WHERE": "home", "WHAT": "ENTERTAINMENT" },
+      "action": { "intent": "PLAY_MUSIC", "params": { "playlist": "default" } },
+      "priority": 10
+    }
+  ]
+}
