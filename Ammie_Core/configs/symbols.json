@@ -1,0 +1,156 @@
+{
+  "version": "1.2.0",
+  "atomic": {
+    "播放": {
+      "canonical": "ACTION_START",
+      "aliases": [
+        "放",
+        "开启"
+      ]
+    },
+    "音乐": {
+      "canonical": "OBJ_MUSIC"
+    },
+    "你": {
+      "canonical": "REF_SELF"
+    },
+    "我": {
+      "canonical": "REF_USER"
+    },
+    "踢": {
+      "canonical": "ACTION_PLAY"
+    },
+    "打": {
+      "canonical": "ACTION_PLAY"
+    },
+    "足球": {
+      "canonical": "OBJ_FOOTBALL"
+    },
+    "篮球": {
+      "canonical": "OBJ_BASKETBALL"
+    },
+    "唱": {
+      "canonical": "ACTION_SING"
+    },
+    "说谎": {
+      "canonical": "ACTION_SING"
+    },
+    "哭泣": {
+      "canonical": "ACTION_SING"
+    },
+    "哭": {
+      "canonical": "ACTION_SING"
+    },
+    "背叛": {
+      "canonical": "ACTION_BETRAY"
+    },
+    "弹吉他": {
+      "canonical": "ACTION_SING"
+    },
+    "打招呼": {
+      "canonical": "ACTION_GREET"
+    },
+    "问候": {
+      "canonical": "ACTION_GREET"
+    },
+    "吃饭": {
+      "canonical": "ACTION_EAT"
+    }
+  },
+  "phrases": {
+    "你是谁": {
+      "intent": "QUERY_IDENTITY"
+    },
+    "你好": {
+      "intent": "GREETING"
+    }
+  },
+  "logic_map": [
+    {
+      "required": [
+        "ACTION_START",
+        "OBJ_MUSIC"
+      ],
+      "intent": "PLAY_MUSIC"
+    },
+    {
+      "required": [
+        "ACTION_SING",
+        "REF_SELF"
+      ],
+      "intent": "QUERY_SONG"
+    },
+    {
+      "required": [
+        "ACTION_SING",
+        "REF_SELF"
+      ],
+      "intent": "QUERY_BASKETBALL"
+    },
+    {
+      "required": [
+        "ACTION_SING",
+        "REF_SELF"
+      ],
+      "intent": "QUERY_BASKETBALL"
+    },
+    {
+      "required": [
+        "ACTION_SING",
+        "REF_SELF"
+      ],
+      "intent": "QUERY_ACTION"
+    },
+    {
+      "required": [
+        "ACTION_BETRAY",
+        "REF_SELF"
+      ],
+      "intent": "QUERY_TRUST"
+    },
+    {
+      "required": [
+        "ACTION_SING",
+        "REF_SELF"
+      ],
+      "intent": "QUERY_ACTION"
+    },
+    {
+      "required": [
+        "ACTION_GREET",
+        "REF_SELF"
+      ],
+      "intent": "QUERY_GENERAL"
+    },
+    {
+      "required": [
+        "ACTION_GREET",
+        "REF_SELF"
+      ],
+      "intent": "QUERY_GREET"
+    },
+    {
+      "required": [
+        "ACTION_EAT",
+        "REF_SELF"
+      ],
+      "intent": "QUERY_CAPABILITY"
+    }
+  ],
+  "response_components": {
+    "AFFIRMATION": {
+      "default": "好的",
+      "home": "好哒",
+      "office": "明白"
+    },
+    "VOCABULARY": {
+      "REF_SELF": "我",
+      "REF_USER": "你",
+      "NEGATIVE": "不会",
+      "POSITIVE": "会"
+    },
+    "EMOJI": {
+      "default": "✨"
+    }
+  }
+}
